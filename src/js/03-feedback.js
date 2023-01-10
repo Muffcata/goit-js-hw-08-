@@ -21,7 +21,6 @@ window.addEventListener('load', () => {
 const currentValues = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
 
 button.addEventListener('click', e => {
-  e.preventDefault();
   console.log(currentValues);
   formElement.reset();
   localStorage.removeItem(LOCALSTORAGE_KEY);
