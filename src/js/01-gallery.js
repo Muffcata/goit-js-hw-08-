@@ -5,7 +5,7 @@ import 'simplelightbox/dist/simple-lightbox.min.css';
 import { galleryItems } from './gallery-items'; //gallery
 // Change code below this line
 
-const photos = document.querySelector('.gallery');
+const photos = document.querySelector('.gallery'); //ite
 
 galleryItems.forEach(item => {
   const innerBox = document.createElement('a');
