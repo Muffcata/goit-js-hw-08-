@@ -2,10 +2,10 @@ import SimpleLightbox from 'simplelightbox';
 import 'simplelightbox/dist/simple-lightbox.min.css';
 
 // Add imports above this line
-import { galleryItems } from './gallery-items'; //gallery
+import { galleryItems } from './gallery-items';
 // Change code below this line
 
-const photos = document.querySelector('.gallery'); //items
+const photos = document.querySelector('.gallery');
 
 galleryItems.forEach(item => {
   const innerBox = document.createElement('a');

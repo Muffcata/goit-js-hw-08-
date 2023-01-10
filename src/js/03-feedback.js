@@ -1,5 +1,7 @@
 import throttle from 'lodash.throttle';
 
+import throttle from 'lodash.throttle';
+
 const button = document.querySelector('button[type="submit"]');
 const formElement = document.querySelector('.feedback-form');
 const LOCALSTORAGE_KEY = 'feedback-form-state';
@@ -21,6 +23,7 @@ window.addEventListener('load', () => {
 const currentValues = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
 
 button.addEventListener('click', e => {
+  e.preventDefault();
   console.log(currentValues);
   formElement.reset();
   localStorage.removeItem(LOCALSTORAGE_KEY);
