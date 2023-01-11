@@ -18,4 +18,8 @@ player.on(
     localStorage.setItem('videoplayer-current-time', `${e.seconds}`);
   }, 2500)
 );
+if (localStorage.getItem('videoplayer-current-time')) {
+  player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
+}
+
 player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
