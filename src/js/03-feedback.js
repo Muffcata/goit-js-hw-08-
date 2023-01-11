@@ -10,21 +10,12 @@ window.addEventListener('load', () => {
     email: email.value,
     message: message.value,
   };
-  if (LOCALSTORAGE_KEY) {
-    const prevVal = localStorage.getItem(LOCALSTORAGE_KEY);
+  const prevVal = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
 
-    email.value = prevVal.email && JSON.parse(prevVal).email;
-    message.value = prevVal.message && JSON.parse(prevVal).message;
+  if (prevVal) {
+    email.value = prevVal.email;
+    message.value = prevVal.message;
   }
-});
-
-const currentValues = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
-
-button.addEventListener('click', e => {
-  e.preventDefault();
-  console.log(currentValues);
-  formElement.reset();
-  localStorage.removeItem(LOCALSTORAGE_KEY);
 });
 
 formElement.addEventListener('submit', e => {
@@ -34,7 +25,13 @@ formElement.addEventListener('submit', e => {
     email: email.value,
     message: message.value,
   };
+
   localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(feedback));
+  const currentValues = JSON.parse(localStorage.getItem(LOCALSTORAGE_KEY));
+
+  console.log(currentValues);
+  formElement.reset();
+  localStorage.removeItem(LOCALSTORAGE_KEY);
 });
 
 formElement.addEventListener(
