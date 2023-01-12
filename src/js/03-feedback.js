@@ -43,5 +43,5 @@ formElement.addEventListener(
       message: message.value,
     };
     localStorage.setItem(LOCALSTORAGE_KEY, JSON.stringify(feedback));
-  }, 5000)
+  }, 500)
 );

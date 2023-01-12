@@ -16,7 +16,7 @@ player.on(
   throttle(e => {
     console.log(e.seconds);
     localStorage.setItem('videoplayer-current-time', `${e.seconds}`);
-  }, 2500)
+  }, 1000)
 );
 if (localStorage.getItem('videoplayer-current-time')) {
   player.setCurrentTime(localStorage.getItem('videoplayer-current-time'));
